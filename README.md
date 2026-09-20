@@ -3,6 +3,10 @@
 Grab and solve these 20 questions and boom, you're good to go for any technical interview
 
 - ## Q-1: Write a query to display all Engineering employees ordered by salary from highest to lowest.
+  SELECT *
+  FROM Employees
+  WHERE department='Engineering'
+  ORDER BY salary DESC
 
 - ## Q-2: Write a query to find the number of employees in each department.
 
