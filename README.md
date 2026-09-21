@@ -158,7 +158,20 @@ ORDER BY highest_spending DESC
 LIMIT 1
 ```
 
-- ## Q-11: TRUNCATE vs DELETE — Remove all rows quickly while keeping the table.
+- ## Q-11: A table has 100 million records. You want to remove all rows as quickly as possible while keeping the table. Which SQL command will you use?
+
+```sql
+-- TRUNCATE vs DELETE — Remove all rows quickly while keeping the table.
+GRANT SELECT ON Employees TO intern_user;
+-- TRUNCATE is used to delete or remove the data quickly and permanently and the characteristics of the table will still remain the same
+-- like number of rows, number of attributes and the primary ket's etc
+-- But we have not any back up or any type of recovery after deletion
+
+-- DELETE is used to delete the data one by one row or column, the data could be recovered after accidentally deletion
+-- It's s a bit slow but safe than TRUNCATE
+
+-- DROP is used to delete the entire table and its structure
+```
 
 - ## Q-12: GRANT SELECT — Give an intern read-only access to the Employees table.
 
