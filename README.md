@@ -139,6 +139,13 @@ WHERE o.customer_id IS NULL;
 ```
 
 - ## Q-9: Write a query to find customers who placed more than one order.
+```sql
+SELECT c.customer_name , COUNT(*) AS count_customers_with_more_than_one_order
+FROM Customers c JOIN Orders o
+ON c.customer_id = o.customer_id
+GROUP BY c.customer_name
+HAVING COUNT(*) > 1;	
+```
 
 - ## Q-10: Write a query to find the highest-spending customer based only on delivered orders.
 
