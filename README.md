@@ -78,45 +78,47 @@ WHERE e.salary> s.salary
   
   Before starting up this Question, firstly we need to create 2 tables **Customers** & **Orders**. The query to create and insert the data in tables would be:
   ```sql
-  -- Remove tables if they already exist
-  DROP TABLE IF EXISTS Orders;
-  DROP TABLE IF EXISTS Customers;
-  
-  
-  -- Create Customers table
-  CREATE TABLE Customers (
-      customer_id INT PRIMARY KEY,
-      customer_name VARCHAR(100),
-      city VARCHAR(100)
-  );
-  
-  
-  -- Create Orders table
-  CREATE TABLE Orders (
-      order_id INT PRIMARY KEY,
-      customer_id INT,
-      amount DECIMAL(10, 2),
-      status VARCHAR(20)
-  );
-  
-  
-  -- Insert Customers
-  INSERT INTO Customers (customer_id, customer_name, city)
-  VALUES
-      (1, 'Aditi Sharma', 'Delhi'),
-      (2, 'Rahul Verma', 'Mumbai'),
-      (3, 'Simran Kaur', 'Chandigarh'),
-      (4, 'Arjun Nair', 'Bengaluru');
-  
-  
-  -- Insert Orders
-  INSERT INTO Orders (order_id, customer_id, amount, status)
-  VALUES
-      (501, 1, 2400, 'Delivered'),
-      (502, 1, 3200, 'Delivered'),
-      (503, 2, 1800, 'Delivered'),
-      (504, 2, 4100, 'Pending'),
-      (505, 3, 950, 'Cancelled');
+-- Remove tables if they already exist
+DROP TABLE IF EXISTS Orders;
+DROP TABLE IF EXISTS Customers;
+
+
+-- Create Customers table
+CREATE TABLE Customers (
+    customer_id INT PRIMARY KEY,
+    customer_name VARCHAR(100),
+    city VARCHAR(100)
+);
+
+
+-- Create Orders table
+CREATE TABLE Orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    amount DECIMAL(10, 2),
+    status VARCHAR(20)
+);
+
+
+-- Insert Customers
+INSERT INTO Customers (customer_id, customer_name, city)
+VALUES
+    (1, 'Ahmed', 'Islmabad'),
+    (2, 'Ali', 'Multan'),
+    (3, 'Salman', 'Lahore'),
+    (4, 'Faizan', 'Burewala'),
+    (5, 'Asad', 'Burewala');
+
+
+-- Insert Orders
+INSERT INTO Orders (order_id, customer_id, amount, status)
+VALUES
+    (501, 1, 2400, 'Delivered'),
+    (502, 1, 3200, 'Delivered'),
+    (503, 2, 1800, 'Delivered'),
+    (504, 2, 4100, 'Pending'),
+    (505, 4, 950, 'Cancelled'),
+    (506, 5, 950, 'Pending');
   ```
 </details>
 
