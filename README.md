@@ -173,7 +173,11 @@ GRANT SELECT ON Employees TO intern_user;
 -- DROP is used to delete the entire table and its structure
 ```
 
-- ## Q-12: GRANT SELECT — Give an intern read-only access to the Employees table.
+- ## A new intern should only be able to view the Employees table but should not modify it. Which SQL command will you use?
+```sql
+-- Q-12: GRANT SELECT — Give an intern read-only access to the Employees table.
+GRANT SELECT ON Employees TO intern_user;
+```
 
 - ## Q-13: SQL Logical Execution Order — Why can't SELECT aliases be used in WHERE?
 
