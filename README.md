@@ -123,9 +123,20 @@ VALUES
 </details>
 
 - ## Q-7: Write a query to display each order with the customer name.
+```sql
+SELECT o.order_id, s.customer_name, o.amount, o.status, s.city
+FROM Orders o JOIN Customers s
+ON o.customer_id = s.customer_id;
 
+```
 
 - ## Q-8: Write a query to find customers who have never placed an order.
+```sql
+SELECT c.customer_id, c.customer_name, c.city
+FROM Customers c LEFT JOIN Orders o
+ON c.customer_id = o.customer_id
+WHERE o.customer_id IS NULL;
+```
 
 - ## Q-9: Write a query to find customers who placed more than one order.
 
