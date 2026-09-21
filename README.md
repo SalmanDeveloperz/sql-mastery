@@ -2,6 +2,30 @@
 
 Grab and solve these 20 questions and boom, you're good to go for any technical interview
 
+<details>
+<summary> Create the Employees table to Continue</summary>
+  
+  ```sql
+  DROP TABLE IF EXISTS `Employees`;
+CREATE TABLE Employees (
+    employee_id INT PRIMARY KEY,
+    employee_name VARCHAR(50),
+    department VARCHAR(50),
+    salary INT,
+    manager_id INT
+);
+
+INSERT INTO Employees (employee_id, employee_name, department, salary, manager_id) VALUES
+(101, 'Aarav', 'Engineering', 95000, 105),
+(102, 'Meera', 'Engineering', 72000, 105),
+(103, 'Kabir', 'Sales', 65000, 106),
+(104, 'Isha', 'Sales', 92000, 106),
+(105, 'Rohan', 'Engineering', 90000, NULL),
+(106, 'Neha', 'Sales', 88000, NULL);
+
+  ```
+</details>
+
 - ## Q-1: Write a query to display all Engineering employees ordered by salary from highest to lowest.
 ```sql
   SELECT *
