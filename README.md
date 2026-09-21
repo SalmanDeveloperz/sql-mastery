@@ -3,23 +3,101 @@
 Grab and solve these 20 questions and boom, you're good to go for any technical interview
 
 - ## Q-1: Write a query to display all Engineering employees ordered by salary from highest to lowest.
-```
+```sql
   SELECT *
   FROM Employees
   WHERE department='Engineering'
-  ORDER BY salary DESC
+  ORDER BY salary DESC;
 ```
 - ## Q-2: Write a query to find the number of employees in each department.
 
+```sql
+-- * is the aggregate function used to count the GROUP BY data
+SELECT department, count(*) AS count_department 
+FROM Employees
+GROUP BY department;
+```
+
 - ## Q-3: Write a query to find the second-highest distinct salary.
 
+```sql
+SELECT MAX(salary) AS second_distinct
+FROM Employees
+WHERE salary < (SELECT MAX(salary) FROM Employees);
+
+```
+
 - ## Q-4: Write a query to find employees earning more than the company average salary.
+```sql
+SELECT employee_id, employee_name, salary AS more_than_average_salary
+FROM Employees
+WHERE salary > (SELECT AVG(salary) FROM Employees)
+```
 
 - ## Q-5: Write a query to find the highest salary in each department.
+```sql
+SELECT department, MAX(salary) AS max_department_vise_salary
+FROM Employees
+GROUP BY department
+```
 
 - ## Q-6: Write a query to find employees whose salary is higher than their manager salary.
+```sql
+SELECT e.employee_name, e.salary, s.employee_name AS manager_name, s.salary AS manager_salary
+FROM Employees e JOIN Employees s
+ON e.manager_id=s.employee_id
+WHERE e.salary> s.salary
+```
+
+<details>
+  <summary> Create the 2 tables with this queries</summary>
+  
+  Before starting up this Question, firstly we need to create 2 tables **Customers** & **Orders**. The query to create and insert the data in tables would be:
+  ```sql
+  -- Remove tables if they already exist
+  DROP TABLE IF EXISTS Orders;
+  DROP TABLE IF EXISTS Customers;
+  
+  
+  -- Create Customers table
+  CREATE TABLE Customers (
+      customer_id INT PRIMARY KEY,
+      customer_name VARCHAR(100),
+      city VARCHAR(100)
+  );
+  
+  
+  -- Create Orders table
+  CREATE TABLE Orders (
+      order_id INT PRIMARY KEY,
+      customer_id INT,
+      amount DECIMAL(10, 2),
+      status VARCHAR(20)
+  );
+  
+  
+  -- Insert Customers
+  INSERT INTO Customers (customer_id, customer_name, city)
+  VALUES
+      (1, 'Aditi Sharma', 'Delhi'),
+      (2, 'Rahul Verma', 'Mumbai'),
+      (3, 'Simran Kaur', 'Chandigarh'),
+      (4, 'Arjun Nair', 'Bengaluru');
+  
+  
+  -- Insert Orders
+  INSERT INTO Orders (order_id, customer_id, amount, status)
+  VALUES
+      (501, 1, 2400, 'Delivered'),
+      (502, 1, 3200, 'Delivered'),
+      (503, 2, 1800, 'Delivered'),
+      (504, 2, 4100, 'Pending'),
+      (505, 3, 950, 'Cancelled');
+  ```
+</details>
 
 - ## Q-7: Write a query to display each order with the customer name.
+
 
 - ## Q-8: Write a query to find customers who have never placed an order.
 
