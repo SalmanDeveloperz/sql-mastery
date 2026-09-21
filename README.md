@@ -148,6 +148,15 @@ HAVING COUNT(*) > 1;
 ```
 
 - ## Q-10: Write a query to find the highest-spending customer based only on delivered orders.
+```sql
+SELECT SUM(o.amount) AS highest_spending
+FROM Customers c JOIN Orders o
+ON c.customer_id = o.customer_id
+WHERE o.status='Delivered'
+GROUP BY c.customer_name
+ORDER BY highest_spending DESC
+LIMIT 1
+```
 
 - ## Q-11: TRUNCATE vs DELETE — Remove all rows quickly while keeping the table.
 
