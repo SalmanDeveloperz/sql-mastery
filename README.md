@@ -224,7 +224,15 @@ FROM Employees
 |  **COUNT** is the only function that can count even  the **NULL** Values in the table | **COUNT (email)** will only count the email fields on the table and skill the **NULL** Values | **COUNT(DISTINCT email)** will only count the unique emails and neglect the **duplicate emails** and the **NULL** or Empty fiels |
 
 
-- ## Q-16: COALESCE() — Return the first available non-NULL value.
+- ## Q-16: A report contains missing values across primary_phone, alternate_phone, and emergency_phone. How would you return the first available value and show 'Not Available' when all three are NULL?
+
+**COALESCE(): Return the first available non-NULL value.**
+
+```sql
+SELECT customer_name,
+    COALESCE(primary_phone, alternate_phone, emergency_phone, 'Not Available') AS contact_phone
+FROM Employees
+```
 
 - ## Q-17: LAG() — Find each user's previous login date.
 
