@@ -36,7 +36,7 @@ INSERT INTO Employees (employee_id, employee_name, department, salary, manager_i
 - ## Q-2: Write a query to find the number of employees in each department.
 
 ```sql
--- * is the aggregate function used to count the GROUP BY data
+-- count(*) is the aggregate function used to count the GROUP BY data
 SELECT department, count(*) AS count_department 
 FROM Employees
 GROUP BY department;
