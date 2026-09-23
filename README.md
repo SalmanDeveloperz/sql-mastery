@@ -162,7 +162,9 @@ LIMIT 1
 
 ```sql
 -- TRUNCATE vs DELETE — Remove all rows quickly while keeping the table.
+
 GRANT SELECT ON Employees TO intern_user;
+
 -- TRUNCATE is used to delete or remove the data quickly and permanently and the characteristics of the table will still remain the same
 -- like number of rows, number of attributes and the primary ket's etc
 -- But we have not any back up or any type of recovery after deletion
