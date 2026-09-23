@@ -3,7 +3,7 @@
 Grab and solve these 20 questions and boom, you're good to go for any technical interview
 
 <details>
-<summary> Create the Employees table to Continue</summary>
+<summary> Create the Employees table to Continue👇</summary>
   
   ```sql
   DROP TABLE IF EXISTS `Employees`;
