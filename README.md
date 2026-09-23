@@ -175,7 +175,7 @@ GRANT SELECT ON Employees TO intern_user;
 -- DROP is used to delete the entire table and its structure
 ```
 
-- ## A new intern should only be able to view the Employees table but should not modify it. Which SQL command will you use?
+- ## Q-12: A new intern should only be able to view the Employees table but should not modify it. Which SQL command will you use?
 ```sql
 -- Q-12: GRANT SELECT — Give an intern read-only access to the Employees table.
 GRANT SELECT ON Employees TO intern_user;
