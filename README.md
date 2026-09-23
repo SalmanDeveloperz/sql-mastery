@@ -218,6 +218,11 @@ FROM Employees
 
 
 - ## Q-15: COUNT(*) vs COUNT(email) vs COUNT(DISTINCT email)
+  
+| COUNT(*) | COUNT(email) | COUNT(DISTINCT email) |
+|----------|--------------|-----------------------|
+|  **COUNT** is the only function that can count even  the **NULL** Values in the table | **COUNT (email)** will only count the email fields on the table and skill the **NULL** Values | **COUNT(DISTINCT email)** will only count the unique emails and neglect the **duplicate emails** and the **NULL** or Empty fiels |
+
 
 - ## Q-16: COALESCE() — Return the first available non-NULL value.
 
