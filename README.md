@@ -196,6 +196,27 @@ GRANT SELECT ON Employees TO intern_user;
 
 - ## Q-14: ROW_NUMBER() vs RANK() vs DENSE_RANK()
 
+```sql
+SELECT employee, salary,
+    ROW_NUMBER() OVER (ORDER BY salary DESC) AS row_no,
+    RANK() OVER (ORDER BY salary DESC) AS rank,
+    DENSE_RANK() (ORDER BY salary DESC) AS dense_rank
+FROM Employees
+```
+
+**Output:**
+| Employee | Salary | ROW_NUMBER | RANK | DENSE_RANK |
+|----------|--------|------------|------|------------|
+| Salman   | 50000  | 1          | 1    | 1          |
+| Ahmed    | 45000  | 2          | 2    | 2          |
+| Hamza    | 45000  | 3          | 2    | 2          |
+| Ali      | 40000  | 4          | 4    | 3          |
+
+1. **ROW_NUMBER():** gives us the number of row
+2. **RANK():** didn't catch the duplicate rank, it can skip rank
+3. **DENSE_RANK():** Unlike RANK() it's didn't skip the rank on duplication and can be used based on use cases
+
+
 - ## Q-15: COUNT(*) vs COUNT(email) vs COUNT(DISTINCT email)
 
 - ## Q-16: COALESCE() — Return the first available non-NULL value.
